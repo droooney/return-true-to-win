@@ -5,5 +5,5 @@ verifyInput = (input) => {
 };
 
 function five2(x) {
-  return eval(x) === '2 + 2 = 5';
+  return eval(x) === '2+3=5';
 }
