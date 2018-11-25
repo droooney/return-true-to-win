@@ -1,4 +1,3 @@
-// not ready
 // submitted by droooney
 
 verifyInput = (input) => {
@@ -6,5 +5,5 @@ verifyInput = (input) => {
 };
 
 function five2(x) {
-  return eval(x) === 'winner';
+  return eval(x) === '2 + 2 = 5';
 }
