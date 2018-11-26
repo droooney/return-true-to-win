@@ -9,14 +9,14 @@ verifyInput = (input) => {
   }
 };
 
-function dry4(x) {
+function dry6(x) {
   if (typeof x !== 'string') {
     return false;
   }
 
-  const obj = { a: false };
+  const obj = { a: { x: { z: false } } };
 
   eval(x)(obj);
 
-  return obj.a;
+  return obj.a.x.z;
 }
