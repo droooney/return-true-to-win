@@ -2,7 +2,7 @@
 
 const {Promise} = window;
 
-delete Promise;
+delete window.Promise;
 
 function waitForIt(x) {
   return Promise.resolve(x());

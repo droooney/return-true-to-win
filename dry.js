@@ -1,16 +1,16 @@
-// submitted by droooney
+// droooney + IWantAmbago
 
 verifyInput = (input) => {
   const parsed = JSON.parse(input);
   let wrong;
 
   if ([...new Set(parsed)].some(c => [...parsed].filter(x => x === (wrong = c)).length !== 1)) {
-    throw `There must be no repeating characters (too many ${JSON.stringify(wrong)})`;
+    throw `Don't repeat yourself (wrong usage of ${JSON.stringify(wrong)})`;
   }
 };
 
 const ev = eval;
 
-function noRepeat(x) {
+function dry(x) {
   return ev(x) == 100 && ev(x) != 100;
 }

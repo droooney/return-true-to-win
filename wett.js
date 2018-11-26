@@ -1,14 +1,14 @@
-// submitted by droooney
+// droooney + IWantAmbago
 
 verifyInput = (input) => {
   const parsed = JSON.parse(input);
   let wrong;
 
   if ([...new Set(parsed)].some(c => [...parsed].filter(x => x === (wrong = c)).length !== 3)) {
-    throw `All characters must be repeated exactly three times (${JSON.stringify(wrong)} is not)`;
+    throw `Write everything three times (wrong usage of ${JSON.stringify(wrong)})`;
   }
 };
 
-function repeatThrice(x) {
+function wett(x) {
   return eval(x) === 'hello world!';
 }
