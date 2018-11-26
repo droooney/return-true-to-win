@@ -14,7 +14,7 @@ const ev = eval;
 function dry4(x) {
   const object = { a: 1 };
 
-  eval(x)(object);
+  ev(x)(object);
 
   return !object.a;
 }
