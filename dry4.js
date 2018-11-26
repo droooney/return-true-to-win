@@ -9,13 +9,10 @@ verifyInput = (input) => {
   }
 };
 
-const ev = eval;
-
 function dry4(x) {
   const object = { a: 1 };
 
-  ev(x)(object);
+  eval(x)(object);
 
   return !object.a;
 }
-
