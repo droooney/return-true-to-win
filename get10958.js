@@ -1,5 +1,7 @@
 // droooney + IWantAmbago
 
+// https://www.youtube.com/watch?v=-ruC5A9EzzE
+
 verifyInput = (input) => {
   const parsed = JSON.parse(input);
   const digits = parsed.match(/\d/g) || [];
