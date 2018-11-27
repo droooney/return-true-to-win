@@ -12,7 +12,7 @@ verifyInput = (input) => {
 
   const remainingOperator = parsed.replace(/[\d+\-*/()]/g, '');
 
-  if (new Set(remainingOperator).size > 1 || /[^%&|^~]/.test(remainingOperator)) {
+  if (new Set(remainingOperator).size > 1 || /[^%&|^~<>]/.test(remainingOperator)) {
     throw 'Input must contain only digits, parenthesis and +, -, *, **, / operators (and 1 more)';
   }
 };
