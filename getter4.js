@@ -1,7 +1,7 @@
 // submitted by droooney
 
 verifyInput = (input) => {
-  if (/[[\]]/.test(input)) throw '"[", "]" are not allowed';
+  if (/[[]/.test(input)) throw 'Wrong usage of "["';
 };
 
 const key = Math.random();
@@ -19,6 +19,7 @@ let a = 0;
 window.__defineGetter__('Function', () => a++ || Func);
 
 delete JSON;
+delete Headers;
 
 function getter4(f) {
   const obj = {[key]: value};

@@ -1,7 +1,7 @@
 // submitted by droooney
 
 verifyInput = (input) => {
-  if (/[[\]]/.test(input)) throw '"[", "]" are not allowed';
+  if (/[[]/.test(input)) throw 'Wrong usage of "["';
 };
 
 const key = Math.random();
@@ -11,7 +11,7 @@ delete Reflect;
 delete Object.prototype.constructor;
 delete Object;
 
-function getter3(f) {
+function getter2(f) {
   const obj = {[key]: value};
 
   return f(obj, key) === value;

@@ -1,7 +1,7 @@
 // submitted by droooney
 
 verifyInput = (input) => {
-  if (/[[\]]/.test(input)) throw '"[", "]" are not allowed';
+  if (/[[]/.test(input)) throw 'Wrong usage of "["';
 };
 
 function getter(f) {
