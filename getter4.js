@@ -19,7 +19,6 @@ let a = 0;
 window.__defineGetter__('Function', () => a++ || Func);
 
 delete JSON;
-delete Headers;
 
 function getter4(f) {
   const obj = {[key]: value};
