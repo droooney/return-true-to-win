@@ -1,6 +1,6 @@
 // submitted by droooney
 
-function funnyArr(f) {
+function funArr(f) {
   let called = false;
   let result;
   const checker = arr => {
