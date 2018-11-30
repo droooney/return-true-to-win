@@ -4,12 +4,14 @@ verifyInput = (input) => {
   if (/[[]/.test(input)) throw 'Wrong usage of "["';
 };
 
+/*s*/beforeRun = () => {
+  delete Reflect;
+  delete Object.prototype.constructor;
+  delete Object;
+};/*s*/
+
 const key = Math.random();
 const value = Math.random();
-
-delete Reflect;
-delete Object.prototype.constructor;
-delete Object;
 
 function getter2(f) {
   const obj = {[key]: value};
