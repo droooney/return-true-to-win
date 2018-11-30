@@ -7,9 +7,11 @@ verifyInput = (input) => {
 /*s*/beforeRun = () => {
   delete Reflect;
   delete Object.prototype.constructor;
+  delete Object.prototype.toSource;
   delete Object;
   delete eval;
   delete Function.prototype.constructor;
+  delete Function.prototype.toSource;
   delete Function;
   delete JSON;
 };/*s*/
