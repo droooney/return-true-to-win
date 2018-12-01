@@ -5,6 +5,8 @@ verifyInput = (input) => {
 };
 
 /*s*/beforeRun = () => {
+  const ownKeys = Reflect.ownKeys;
+
   delete Reflect;
   delete Object.prototype.constructor;
   delete Object.prototype.toSource;
@@ -14,14 +16,15 @@ verifyInput = (input) => {
   delete Function.prototype.toSource;
   delete Function;
   delete JSON;
-  delete Headers.prototype.constructor;
-  delete Headers.prototype.get;
-  delete Headers.prototype.set;
+
+  ownKeys(Headers.prototype).forEach(k => delete Headers.prototype[k]);
+  ownKeys(URLSearchParams.prototype).forEach(k => delete URLSearchParams.prototype[k]);
+
   delete Headers;
-  delete URLSearchParams.prototype.constructor;
-  delete URLSearchParams.prototype.get;
-  delete URLSearchParams.prototype.set;
   delete URLSearchParams;
+  delete Request;
+  delete Response;
+  delete fetch;
 };/*s*/
 
 const key = Math.random();
