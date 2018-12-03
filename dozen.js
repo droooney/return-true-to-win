@@ -7,9 +7,7 @@ verifyInput = (input) => {
 };
 
 const getRandomInt = () => Math.floor(Math.random() * 1e3);
-const values = [...Array(1e3)].map(() => {
-  return [...Array(4)].map(getRandomInt);
-});
+const values = [...Array(1e3)].map(() => [...Array(4)].map(getRandomInt));
 const hypot = Math.hypot;
 
 delete Math.hypot;
