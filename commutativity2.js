@@ -1,4 +1,3 @@
-// not ready
 // submitted by droooney
 
 function commutativity2(x, y) {

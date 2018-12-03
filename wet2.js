@@ -12,4 +12,3 @@ verifyInput = (input) => {
 function wet2(x) {
   return eval(x) === Math.random();
 }
-

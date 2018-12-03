@@ -9,14 +9,6 @@ verifyInput = (input) => {
   }
 };
 
-function dry7(x) {
-  if (typeof x !== 'string') {
-    return false;
-  }
-
-  const obj = { a: { x: [{ z: false }] } };
-
-  eval(x)(obj);
-
-  return Object.keys(obj.a.x[0]).length > 1 && obj.a.x[0].z;
+function dry8(x) {
+  return eval(x) == 'tricky now';
 }
