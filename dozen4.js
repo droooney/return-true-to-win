@@ -6,6 +6,6 @@ verifyInput = (input) => {
 
 const rand = Math.random();
 
-function dozen3(x) {
+function dozen4(x) {
   return x === rand || (x => x === 123 && (x => x === 456 && (x => x === 789 && rand)));
 }
