@@ -8,7 +8,7 @@ function dozen2(palindrome) {
   return (
     typeof palindrome === 'string'
     && palindrome.length > 1e3
-    && new Set(palindrome).size > 12
+    && new Set(palindrome).size > 13
     && palindrome === [...palindrome].reverse().join('')
   );
 }
