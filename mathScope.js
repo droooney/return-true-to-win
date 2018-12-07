@@ -1,7 +1,7 @@
 // submitted by droooney
 
 verifyInput = (input) => {
-  if (/[\d+\-*/%^&|~\\<=>{}?:$]/.test(JSON.parse(input))) throw 'No math allowed';
+  if (/[\d+\-*/%^&|~\\<=>{}?:$]/.test(JSON.parse(input))) throw 'Illegal characters';
 };
 
 beforeRun = () => {
