@@ -9,7 +9,7 @@ beforeRun = () => {
 };
 
 const hasOwn = Function.call.bind({}.hasOwnProperty);
-const Scope = new Proxy(Math, {
+const scope = new Proxy(Math, {
   has: _ => 1,
   detele: (t, k) => (k === 'eval' || k === 'x') && delete t[k],
   set: _ => 0,
@@ -19,10 +19,10 @@ const Scope = new Proxy(Math, {
 
 Math.eval = eval;
 
-function scope(x) {
+function mathScope(x) {
   Math.x = x;
 
-  with (Scope) {
+  with (scope) {
     const $ = eval('x => ' + x, delete eval, delete x);
 
     for (let i = 0; i < 1e3; i++) {
