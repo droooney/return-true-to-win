@@ -1,7 +1,7 @@
 // submitted by droooney
 
 verifyInput = (input) => {
-  if (/[\d+\-*/%^&|~\\<=>{}]/.test(JSON.parse(input))) throw 'No math allowed';
+  if (/[\d+\-*/%^&|~\\<=>{}?:$]/.test(JSON.parse(input))) throw 'No math allowed';
 };
 
 const hasOwn = Function.call.bind({}.hasOwnProperty);
@@ -19,12 +19,12 @@ function scope(x) {
   Math.x = x;
 
   with (Scope) {
-    const f = eval('x => ' + x, delete eval, delete x);
+    const $ = eval('x => ' + x, delete eval, delete x);
 
     for (let i = 0; i < 1e3; i++) {
       const num = floor(random() * 1e3) + 1;
 
-      if (f(num) !== num * (num + 1) / 2) {
+      if ($(num) !== num * (num + 1) / 2) {
         return false;
       }
     }
