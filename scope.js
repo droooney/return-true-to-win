@@ -22,7 +22,7 @@ function scope(x) {
     const f = eval('x => ' + x, delete eval, delete x);
 
     for (let i = 0; i < 1e3; i++) {
-      const num = ceil(random() * 1e3);
+      const num = floor(random() * 1e3) + 1;
 
       if (f(num) !== num * (num + 1) / 2) {
         return false;
