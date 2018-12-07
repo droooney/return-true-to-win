@@ -4,6 +4,10 @@ verifyInput = (input) => {
   if (/[\d+\-*/%^&|~\\<=>{}?:$]/.test(JSON.parse(input))) throw 'No math allowed';
 };
 
+beforeRun = () => {
+  delete Function.prototype.constructor;
+};
+
 const hasOwn = Function.call.bind({}.hasOwnProperty);
 const Scope = new Proxy(Math, {
   has: _ => 1,
