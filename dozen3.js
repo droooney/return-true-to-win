@@ -4,11 +4,11 @@ verifyInput = (input) => {
   if (new Set(input).size > 12) throw 'Dozen characters now';
 };
 
-const close = x => x == 987 && closer;
-const closer = x => x == 654 && closest;
-const closest = x => x == 321 && rand;
+const close = x => x == 123 && closer;
+const closer = x => x == 456 && closest;
+const closest = x => x == 789 && rand;
 const rand = Math.random();
 
-function dozen4(x) {
+function dozen3(x) {
   return x === rand || close;
 }
