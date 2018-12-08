@@ -2,6 +2,7 @@
 
 verifyInput = (input) => {
   if (/[\d+\-*/%^&|~\\<=>{}?:$]/.test(JSON.parse(input))) throw 'Illegal characters';
+  /*s*/if (/this/.test(input)) throw 'No "this" backdoor this time';/*s*/
 };
 
 beforeRun = () => {
@@ -19,7 +20,7 @@ const scope = new Proxy(Math, {
 
 Math.eval = eval;
 
-function mathScope(x) {
+function mathScope3(x) {
   Math.x = x;
 
   with (scope) {
@@ -28,7 +29,7 @@ function mathScope(x) {
     for (let i = 0; i < 1e3; i++) {
       const num = floor(random() * 1e3) + 1;
 
-      if ($(num) !== num * (num + 1) / 2) {
+      if ($(num) !== num - 1) {
         return false;
       }
     }
