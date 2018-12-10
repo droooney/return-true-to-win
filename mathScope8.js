@@ -27,8 +27,8 @@ function mathScope8(x) {
     const $ = eval('(x, y) => ' + x, delete eval, delete x);
 
     for (let i = 0; i < 1e3; i++) {
-      const num1 = floor(random() * 1e2) + 1;
-      const num2 = floor(random() * 1e2) + 1;
+      const num1 = floor(random() * 5e2) + 1;
+      const num2 = floor(random() * 499) + 2;
 
       if ($(num1, num2) !== num1 % num2) {
         return false;
