@@ -1,9 +1,9 @@
 // submitted by droooney
 
-var eval = window.eval;
-var floor = Math.floor;
-var random = Math.random;
-/*s*/var executeNTimes = (fn, n) => {
+/*s*/const eval = window.eval;
+const floor = Math.floor;
+const random = Math.random;
+const executeNTimes = (fn, n) => {
   while (n--) fn();
 };/*s*/
 
