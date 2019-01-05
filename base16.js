@@ -52,7 +52,7 @@ const decode = (string) => {
     .join``;
 };
 
-function inBase16(stringToDecode) {
+function base16(stringToDecode) {
   const decoded = decode(stringToDecode);
   const encoded = encode(decoded);
 

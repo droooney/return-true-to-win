@@ -17,12 +17,12 @@ const testToEncode = /./.test.bind(/^(?:[\u0000-\u00ff]{5})+$/);
   encode('12345');      // '&%a/&)-!'
   encode('alert(123)'); // '(^`&=l?:^+;?%(a<'
 */
-const encode = (string) => {
+const encode = window.encode = (string) => {
   if (!testToEncode(string)) {
     throw 'Wrong input';
   }
 
-  return string.match(/.{5}/g)
+  return string.match(/[^]{5}/g)
     .map(s => (
       [...s]
         .map(c => c.charCodeAt().toString(2).padStart(8, 0))
@@ -40,7 +40,7 @@ const encode = (string) => {
   decode('=-a&tt/a');         // 'Proxy'
   decode(')a.,0~*%(^b&==-<'); // 'new Date()'
 */
-const decode = (string) => {
+const decode = window.decode = (string) => {
   if (!testToDecode(string)) {
     throw 'Wrong input';
   }
@@ -56,21 +56,9 @@ const decode = (string) => {
     .join``;
 };
 
-function inBase32(stringToDecode) {
+function base32_2(stringToDecode) {
   const decoded = decode(stringToDecode);
   const encoded = encode(decoded);
-  const value = Math.random();
-  const obj = { a: value };
 
-  globalEval(encoded)(obj);
-
-  if ('a' in obj) {
-    return false;
-  }
-
-  const copy = {};
-
-  globalEval(decoded)(copy);
-
-  return copy.a === value;
+  return globalEval(decoded) === encoded && globalEval(encoded) === decoded;
 }
